@@ -331,7 +331,23 @@ public class SplashScreen extends CordovaPlugin {
                 }
                 splashDialog.setContentView(splashImageView);
                 splashDialog.setCancelable(false);
+                
+
+
+
+
+                AlphaAnimation fadeIn = new AlphaAnimation(0, 1);
+                fadeIn.setInterpolator(new DecelerateInterpolator());
+                fadeIn.setDuration(fadeSplashScreenDuration);
+
+                splashImageView.setAnimation(fadeIn);
+                splashImageView.startAnimation(fadeIn);
+
                 splashDialog.show();
+
+                  
+
+
 
                 if (preferences.getBoolean("ShowSplashScreenSpinner", true)) {
                     spinnerStart();
